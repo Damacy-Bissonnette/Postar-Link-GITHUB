@@ -1,0 +1,57 @@
+header{
+    background-color: crimson; 
+    width: 1728px;  
+    height: 215px;
+    display: inline-flexbox;
+    flood-color: gold;
+    color: cyan; 
+}
+#Banner{
+    display: inline-flexbox;
+    width: 1661px;
+    height: 357px;
+    background-color: darkgreen;
+    color: azure;
+}
+.video_imagem{
+    display: inline-block;
+    background-color: deeppink;
+    width: 1728px;
+    min-height: 209px;
+    margin-right: 75px;
+    border-color: coral;
+    border: 222;
+}
+#Carrossel{
+    display: inline-flex;
+    border: 100px;
+    width: 1728px;
+    min-height: 209px;
+    margin-right: 75px;
+    color-scheme: blue;
+    color: chocolate;
+    outline-color: blueviolet;
+    background-color: purple;
+    font-display: bold;
+}
+#Conteúdo{
+    display: inline;
+    min-height: 100px;
+    width: 1728px;
+    background-color: navy;
+    color: bisque;
+}
+footer{
+    display: grid;
+    border: 1000px;
+    outline-color: teal;
+    size: 100px;
+}
+#icon{    
+}
+#apple-touch-icon{
+}
+#manifest{
+}
+#shortcut_icon{
+}

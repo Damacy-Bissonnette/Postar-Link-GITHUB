@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento Exemplo 1</title>
+
+    <style type="text/css">
+        .menutitle{
+        cursor:pointer;
+        margin-bottom: 5px;
+        background-color:#ECECFF;
+        color:#000000;
+        width:140px;
+        padding:2px;
+        text-align:center;
+        font-weight:bold;
+        /*/*/border:1px solid #000000;/* */
+        }
+        
+        .submenu{
+        margin-bottom: 0.5em;
+        }
+        </style>
+        
+        <script type="text/javascript">
+        
+        /***********************************************
+        * Switch Menu script- by Martial B of http://getElementById.com/
+        * Modified by Dynamic Drive for format & NS4/IE4 compatibility
+        * Visit http://www.dynamicdrive.com/ for full source code
+        ***********************************************/
+        
+        var persistmenu="yes" //"yes" or "no". Make sure each SPAN content contains an incrementing ID starting at 1 (id="sub1", id="sub2", etc)
+        var persisttype="sitewide" //enter "sitewide" for menu to persist across site, "local" for this page only
+        
+        if (document.getElementById){ //DynamicDrive.com change
+        document.write('<style type="text/css">\n')
+        document.write('.submenu{display: none;}\n')
+        document.write('</style>\n')
+        }
+        
+        function SwitchMenu(obj){
+            if(document.getElementById){
+            var el = document.getElementById(obj);
+            var ar = document.getElementById("masterdiv").getElementsByTagName("span"); //DynamicDrive.com change
+                if(el.style.display != "block"){ //DynamicDrive.com change
+                    for (var i=0; i<ar.length; i++){
+                        if (ar[i].className=="submenu") //DynamicDrive.com change
+                        ar[i].style.display = "none";
+                    }
+                    el.style.display = "block";
+                }else{
+                    el.style.display = "none";
+                }
+            }
+        }
+        
+        function get_cookie(Name) { 
+        var search = Name + "="
+        var returnvalue = "";
+        if (document.cookie.length > 0) {
+        offset = document.cookie.indexOf(search)
+        if (offset != -1) { 
+        offset += search.length
+        end = document.cookie.indexOf(";", offset);
+        if (end == -1) end = document.cookie.length;
+        returnvalue=unescape(document.cookie.substring(offset, end))
+        }
+        }
+        return returnvalue;
+        }
+        
+        function onloadfunction(){
+        if (persistmenu=="yes"){
+        var cookiename=(persisttype=="sitewide")? "switchmenu" : window.location.pathname
+        var cookievalue=get_cookie(cookiename)
+        if (cookievalue!="")
+        document.getElementById(cookievalue).style.display="block"
+        }
+        }
+        
+        function savemenustate(){
+        var inc=1, blockid=""
+        while (document.getElementById("sub"+inc)){
+        if (document.getElementById("sub"+inc).style.display=="block"){
+        blockid="sub"+inc
+        break
+        }
+        inc++
+        }
+        var cookiename=(persisttype=="sitewide")? "switchmenu" : window.location.pathname
+        var cookievalue=(persisttype=="sitewide")? blockid+";path=/" : blockid
+        document.cookie=cookiename+"="+cookievalue
+        }
+        
+        if (window.addEventListener)
+        window.addEventListener("load", onloadfunction, false)
+        else if (window.attachEvent)
+        window.attachEvent("onload", onloadfunction)
+        else if (document.getElementById)
+        window.onload=onloadfunction
+        
+        if (persistmenu=="yes" && document.getElementById)
+        window.onunload=savemenustate
+        
+        </script>
+
+        <!-- Keep all menus within masterdiv-->
+<div id="masterdiv">
+
+	<div class="menutitle" onclick="SwitchMenu('sub1')">Site Menu</div>
+	<span class="submenu" id="sub1">
+		- <a href="new.htm">What's New</a><br>
+		- <a href="hot.htm">What's hot</a><br>
+		- <a href="revised.htm">Revised Scripts</a><br>
+		- <a href="morezone/">More Zone</a>
+	</span>
+
+	<div class="menutitle" onclick="SwitchMenu('sub2')">FAQ/Help</div>
+	<span class="submenu" id="sub2">
+		- <a href="notice.htm">Usage Terms</a><br>
+		- <a href="faqs.htm">DHTML FAQs</a><br>
+		- <a href="help.htm">Scripts FAQs</a>
+	</span>
+
+	<div class="menutitle" onclick="SwitchMenu('sub3')">Help Forum</div>
+	<span class="submenu" id="sub3">
+		- <a href="http://www.codingforums.com">Coding Forums</a><br>
+	</span>
+	
+	<div class="menutitle" onclick="SwitchMenu('sub4')">Cool Links</div>
+	<span class="submenu" id="sub4">
+		- <a href="http://www.javascriptkit.com">JavaScript Kit</a><br>
+		- <a href="http://www.freewarejava.com">Freewarejava</a><br>
+		- <a href="http://www.cooltext.com">Cool Text</a><br>
+		- <a href="http://www.google.com">Google.com</a>
+	</span>
+
+	<img src="about.gif" onclick="SwitchMenu('sub5')"><br>
+	<span class="submenu" id="sub5">
+		- <a href="http://www.dynamicdrive.com/link.htm">Link to DD</a><br>
+		- <a href="http://www.dynamicdrive.com/recommendit/">Recommend Us</a><br>
+		- <a href="http://www.dynamicdrive.com/contact.htm">Email Us</a><br>
+	</span>
+
+</div>
+</head>
+<body>
+ <header>⋆✷  🎀  𝒮𝑒𝒿𝒶 𝒷𝑒𝓂 𝓋𝒾𝓃𝒹❀ à 𝓂𝒾𝓃𝒽𝒶 𝓅á𝑔𝒾𝓃𝒶 𝓃𝒶 𝓇𝑒𝒹𝑒❢  🎀  ✷⋆
+</header>
+<textarea>Isso tudo aqui é com certeza uma expressão de HTml! 😎</textarea>
+
+<h1>C̶̭̖̊͊̃̍̌̽̈́͗̈â̶̢̡̰͔̳̯̳͎͖̿̑̽͊͗͌̂̓́ͅi̴̢̧̖͎͈̮̪̻̳͌͊̐̉̄m̶̩̒̈́͑̇̀̒́ ̵̫͉̝̀̏̐̑ͅm̸͍̤̲̰͑́̚ͅa̸̢͉̥̤͎̗̬̗̬̮̾̐̈́t̸̬̼́̇ǫ̷̨̦̜̞̤̩́̑̂͑̆̈́̒͗͜ǔ̵̮̺̪̯̱͈̭̮̉̊̈́̀̃̆͘̚͠ ̴̰̳̗̗̘̺̮̹̼̋̎̽̎̄̑͝͠A̷̢̯͓͐͋b̵͓͂̏̈́̈́͐̂ę̴̻̲͖̘̔̿͋͛̎̾͝l̴͕̝̯̩̺̤̖̭͒</h1>
+
+<p>😡👣  é 𝓹ᵉŕ𝔦ģ๏รσ ᶤ𝐑 ｓ๏Ž丨𝐍𝒽ⓞ ⓑĮ𝐧ό, 𝐏𝑒Ⓖùｅ Ｕ๓ค 𝒸𝕀ℓⓐ𝓭Ⓐ!  ✌🎁</p>
+
+<div id="scroll-animate">
+    <div id="scroll-animate-main">
+      <div class="wrapper-parallax">
+        <header>
+          <h1>Cabeçalho</h1>
+        </header>
+  
+        <section class="content">
+          <h1>Conteúdo</h1>
+        </section>
+  
+        <footer>
+          <h1>Footer/Pedal</h1>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <div style="width: 25%; height: 10px; overflow: auto; scrollbar-face-color: #f0f32d; scrollbar-shadow-color: #12f10a; br /scrollbar-highlight-color: #6F4709; scrollbar-3dlight-color:#11111; scrollbar-darkshadow-color: #6F4709; br /scrollbar-track-color: #FFE8C1; scrollbar-arrow-color: #6F4709;"></div>
+
+<span style="background-image: url(https://i.ytimg.com/vi/_98cfv_x8Mo/hqdefault.jpg); font-size: 40pt">Make use of this kind of bovine excrement! :)</span>
+
+  <span style="background-color: #090cac">Seu textão aqui.</span>
+
+<span title="Você não conseguiu nadica de nada com isto. ;)">Mova o teu rato até mim!</span>
+
+<marquee>Eu me remexo muito!</marquee>
+
+<style type="text/css">
+	table.tableizer-table {
+		font-size: 12px;
+		border: 1px solid #CCC; 
+		font-family: Arial, Helvetica, sans-serif;
+	} 
+	.tableizer-table td {
+		padding: 4px;
+		margin: 3px;
+		border: 1px solid #CCC;
+	}
+	.tableizer-table th {
+		background-color: #104E8B; 
+		color: #FFF;
+		font-weight: bold;
+	}
+</style>
+
+<table class="tableizer-table">
+<thead><tr><class="tableizer-firstrow"><th>file:///C:/Users/elias.faria/Downloads/dnd-character-sheet.xlsx</th></tr>
+</tbody>Conheça os 5 Destinos Paradisíacos no Nosso País! :^)</table>
+
+<p>Apresentamos os pacotes turísticos perfeitos para quem busca experiências inesquecíveis em cenários
+  paradisíacos dentro do nosso país. Nossas landing pages são projetadas para ajudá-lo a escolher o destino
+  dos seus sonhos e realizar uma viagem incrível.</p>
+
+  <p>Cada uma das nossas landing pages exclusivas destaca um destino diferente:/html/body/div/p[1]/html/body/div.container/p.container>p:nth-child(2) Cada uma das nossas landing pages exclusivas destaca um destino diferente:</p>
+
+  <ol>
+    <li>Desfrute das praias de areia branca e águas cristalinas em Rio de Janeiro!</li>
+    <a href="https://www.booking.com/tourism/city/br/rio-de-janeiro.html?aid=360920;label=New_English_EN_ALL-GBIECAUS_14224741686-KiBH2ftIzA2ASNVrtWSzjgS60966727686:pl:ta:p1:p2:ac:ap:neg;ws=&gclid=EAIaIQobChMIybPh-9vBgAMVQeVcCh1uYg1mEAAYASAAEgLjnvD_BwE">Visite a Cidade de Deus agora já!</a>
+    <p>&nbsp;</p>
+
+    <li>Explore a exuberante natureza e cachoeiras lá em Piracicaba!</li>
+    <title>Piracicaba que eu adoro tanto, Cheia de flores, cheia de encantos ...</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="Sobre.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 5.9.10, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+
+    <video width="320" height="240" controls>
+      <source src="videoplayback.mp4" type="video/mp4">
+      <source src="movie.ogg" type="video/ogg">
+    Your browser does not support the video tagging.
+    </video>
+    <p>&nbsp;</p>
+
+    <li>Mergulhe na cultura e gastronomia local de Taubaté!</li>
+    <img src="tempsnip.png" alt="Italian Trulli">
+    <p>&nbsp;</p>
+
+    <li>Aventure-se em trilhas e paisagens montanhosas em São Remo!</li>
+    <img src="São Remo.jfif" alt="alternatetext">
+
+    <p>&nbsp;</p>
+
+    <li>Relaxe em resorts de luxo e praias isoladas no meio em Pedreira Prado Lopes!</li>
+    <canvas id="https://www.google.com/imgres?imgurl=https%3A%2F%2Fprefeitura.pbh.gov.br%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fslideshow%2Fpublic%2Fnoticia%2Fimg%2F2017-12%2Fpra%25C3%25A7a-santa-cruz%2520ed%2520foto%2520divulgacao%2520pbh.png%3Fitok%3DHAhQvWXm&tbnid=d5rdwhiwNUqGoM&vet=12ahUKEwj1uOyI4sGAAxWTOLkGHYplDrIQMygBegUIARDQAQ..i&imgrefurl=https%3A%2F%2Fprefeitura.pbh.gov.br%2Fnoticias%2Fpedreira-prado-lopes-tem-praca-de-esportes-e-lazer&docid=DSrp5pGZRP0wqM&w=770&h=420&q=Pedreira%20Prado%20Lopes&ved=2ahUKEwj1uOyI4sGAAxWTOLkGHYplDrIQMygBegUIARDQAQ" width="200" height="100"></canvas>
+    
+    <svg width="100" height="100">
+      <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+    </svg>
+
+    <img src="qrcode_prefeitura.pbh.gov.br.png" alt="Flowers in Chania">
+  </ol>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <audio controls>
+    <source src="yeah.ogg" type="audio/ogg">
+    <source src="yeah.aiff" type="audio/mpeg">
+  </audio> 
+
+</body>
+</html>
+
+</body>
+</html>
